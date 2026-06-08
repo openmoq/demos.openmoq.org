@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenMOQ &ndash; Demos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400&family=Lexend+Deca:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-white:            hsl(0, 0%, 98%);
+      --color-beige:            hsl(36, 42%, 95%);
+      --color-blue:             hsl(243, 57%, 54%);
+      --color-blue--darker:     hsl(243, 57%, 34%);
+      --color-yellow:           hsl(37, 75%, 67%);
+      --color-darkblue:         hsl(251, 37%, 10%);
+      --color-darkblue--darker: hsl(254, 73%, 6%);
+      --color-gray:             hsla(231, 8%, 46%, 1);
+      --color-border-light:     hsla(0, 0%, 100%, .1);
+      --color-border-dark:      hsl(0, 0%, 85%);
+      --color-lines-light:      hsl(252, 30%, 14%);
+      --color-lines-dark:       hsla(260, 25%, 9%, .1);
+      --color-background:       254, 73%, 6%;
+    }
+
+    html, body {
+      padding: 0; margin: 0;
+      font-family: Lexend, sans-serif;
+      background: var(--color-darkblue--darker);
+      color: var(--color-white);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: var(--color-yellow); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover, a:focus { text-decoration: none; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed; top: 0; width: 100%; height: 65px;
+      display: flex; align-items: center;
+      border-bottom: 1px solid var(--color-border-light);
+      background-color: hsla(var(--color-background), .96);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      font-family: 'Lexend Deca', sans-serif;
+    }
+    .navbar-inner {
+      width: 100%; max-width: 1150px; margin: 0 auto;
+      padding: 0 25px; display: flex; align-items: center;
+      justify-content: space-between; height: 100%;
+    }
+    .navbar-logo { display: block; }
+    .navbar-logo img { display: block; }
+    .navbar-links {
+      display: flex; align-items: center; gap: 40px;
+      list-style: none; padding: 0; margin: 0;
+    }
+    .navbar-links a {
+      color: #fff; text-transform: uppercase; text-decoration: none;
+      font-size: .875rem; transition: opacity .2s ease;
+    }
+    .navbar-links a:hover { opacity: .7; }
+    .navbar-links a.active { color: var(--color-yellow); opacity: 1; }
+    .menu-btn {
+      display: none; flex-direction: column; justify-content: space-around;
+      width: 30px; height: 30px; background: transparent; border: none;
+      cursor: pointer; padding: 0; color: #fff;
+    }
+    @media (max-width: 767px) {
+      .menu-btn { display: flex; }
+      .navbar-links {
+        position: fixed; top: 65px; left: 0; width: 100%;
+        background-color: hsla(var(--color-background), .97);
+        -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+        flex-direction: column; gap: 0; align-items: flex-start;
+        padding: 0; margin: 0;
+        opacity: 0; visibility: hidden; transform: translateY(-10px);
+        transition: all .3s ease;
+        border-bottom: 1px solid var(--color-border-light);
+        z-index: 99;
+      }
+      .navbar-links.open { opacity: 1; visibility: visible; transform: none; }
+      .navbar-links li { width: 100%; }
+      .navbar-links a { padding: 20px 25px; display: block; }
+    }
+
+    /* ── HERO ── */
+    .page-hero {
+      padding-top: 65px; position: relative; overflow: hidden;
+      background: var(--color-darkblue--darker);
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0; opacity: .18;
+    }
+    .page-hero-inner {
+      position: relative; z-index: 1; max-width: 960px;
+      margin: 0 auto; padding: 80px 25px 70px;
+      display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 60px;
+    }
+    .hero-content {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+    }
+    .hero-qr img {
+      display: block; width: 160px; height: 160px; flex-shrink: 0;
+    }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 10px; list-style: none;
+      padding: 6px 20px; border: 1px solid var(--color-border-light);
+      border-radius: 20px; margin: 0 0 50px;
+    }
+    .hero-pill li {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Lexend Deca', sans-serif; font-size: .8125rem;
+      text-transform: uppercase; color: var(--color-white);
+    }
+    .dot {
+      display: block; width: 4px; height: 4px;
+      border-radius: 1px; background-color: var(--color-yellow); flex-shrink: 0;
+    }
+    .hero-title {
+      font-size: clamp(2.75rem, 8vw, 4.5rem); font-weight: 400;
+      line-height: 1.05; letter-spacing: -.01em; color: var(--color-white);
+      margin-bottom: 20px;
+    }
+    .hero-subtitle {
+      font-family: 'Be Vietnam Pro', sans-serif; font-weight: 300;
+      font-size: 1.125rem; color: rgba(255,255,255,.8);
+      max-width: 600px; margin: 0 auto; line-height: 1.65;
+    }
+
+    hr.divider { border: none; height: 1px; margin: 0; background: var(--color-lines-light); }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer-section { background: var(--color-darkblue--darker); padding: 40px 25px; }
+    .disclaimer-inner { max-width: 1150px; margin: 0 auto; }
+    .disclaimer-box {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 16px 20px;
+      background: rgba(234,186,109,.07);
+      border: 1px solid rgba(234,186,109,.35);
+      border-radius: 20px 0 0;
+    }
+    .disclaimer-icon { flex-shrink: 0; margin-top: 2px; }
+    .disclaimer-text {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: .875rem; color: var(--color-yellow); line-height: 1.55;
+    }
+    .disclaimer-text strong {
+      display: block; font-weight: 600; margin-bottom: 4px; font-family: Lexend, sans-serif;
+    }
+
+    /* ── DEMOS ── */
+    .demos-section { background: var(--color-darkblue--darker); padding: 0 25px 100px; }
+    .demos-inner { max-width: 1150px; margin: 0 auto; }
+    .section-label {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Lexend Deca', sans-serif; font-size: .8125rem;
+      text-transform: uppercase; color: rgba(255,255,255,.6);
+      margin-bottom: 30px; padding-top: 60px;
+    }
+    .demos-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      border: 1px solid hsl(245,9%,25%); border-right: none; border-bottom: none;
+      border-radius: 20px 0 0; overflow: hidden;
+    }
+    @media (max-width: 1024px) {
+      .demos-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .demos-grid { grid-template-columns: 1fr; }
+    }
+    .demo-card {
+      display: flex; flex-direction: column;
+      background: var(--color-darkblue--darker);
+      border-right: 1px solid hsl(245,9%,25%);
+      border-bottom: 1px solid hsl(245,9%,25%);
+      transition: background .2s ease;
+    }
+    .demo-card:hover { background: var(--color-darkblue); }
+    .card-thumb {
+      width: 100%; aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--color-darkblue) 0%, var(--color-darkblue--darker) 100%);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .card-thumb::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 40%, rgba(89,80,250,.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .card-thumb-placeholder {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(255,255,255,.2); font-family: 'Lexend Deca', sans-serif;
+      font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; z-index: 1;
+    }
+    .card-tag {
+      position: absolute; top: 12px; right: 12px;
+      font-family: 'Lexend Deca', sans-serif; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .08em;
+      padding: 4px 10px; border-radius: 20px;
+      border: 1px solid var(--color-border-light);
+      background: hsla(var(--color-background), .75);
+      color: rgba(255,255,255,.8);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); z-index: 2;
+    }
+    .card-body { padding: 30px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .card-title-row { display: flex; align-items: center; gap: 10px; }
+    .card-title { font-size: 1.125rem; font-weight: 500; color: var(--color-white); letter-spacing: -.01em; }
+    .card-desc {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: .9375rem; color: rgba(255,255,255,.6); line-height: 1.6; flex: 1;
+    }
+    .card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px; margin-top: 8px;
+    }
+    .card-status {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'Lexend Deca', sans-serif; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .06em; color: rgba(255,255,255,.5);
+    }
+    .status-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #facc15; box-shadow: 0 0 5px #facc15; flex-shrink: 0;
+    }
+    .status-dot.live    { background: #4ade80; box-shadow: 0 0 5px #4ade80; }
+    .status-dot.offline { background: #f87171; box-shadow: 0 0 5px #f87171; }
+
+    /* ── BUTTON ── */
+    .btn {
+      font-family: 'Lexend Deca', sans-serif; padding: 10px 15px; border-radius: 20px;
+      appearance: none; border: none; cursor: pointer; font-size: .875rem; font-weight: 400;
+      transition: all .2s ease-in-out; color: #fff; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 10px; line-height: 1; white-space: nowrap;
+    }
+    .btn:active { transform: scale(.98); }
+    .btn-primary { background: var(--color-blue); border: 1px solid var(--color-blue); }
+    .btn-primary:hover { background: var(--color-blue--darker); border-color: var(--color-blue--darker); color: #fff; text-decoration: none; }
+    .btn-secondary { background: transparent; border: 1px solid white; }
+    .btn-secondary:hover { background: #fff; color: var(--color-darkblue--darker); text-decoration: none; }
+    .btn .arrow { display: flex; transition: transform .2s ease-in-out; }
+    .btn:hover .arrow { transform: translateX(3px); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--color-white); padding: 40px 25px; }
+    .footer-inner {
+      max-width: 1150px; margin: 0 auto; display: flex;
+      flex-wrap: wrap; gap: 30px 50px; align-items: center; justify-content: space-between;
+      padding: 30px 0; border-top: 1px solid var(--color-lines-dark);
+      border-bottom: 1px solid var(--color-lines-dark);
+    }
+    .footer-logo img { filter: invert(1) brightness(0); display: block; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 6px 30px; list-style: none; }
+    .footer-links a {
+      font-family: 'Lexend Deca', sans-serif; font-size: .8125rem; text-transform: uppercase;
+      color: var(--color-darkblue--darker); text-decoration: none; opacity: .6; transition: opacity .2s;
+    }
+    .footer-links a:hover { opacity: 1; text-decoration: none; }
+    .footer-copy {
+      width: 100%; font-family: 'Be Vietnam Pro', sans-serif; font-size: .8rem;
+      color: var(--color-darkblue--darker); opacity: .5; padding-top: 20px;
+    }
+
+    #tools { padding-top: 80px; }
+
+    @media (max-width: 640px) {
+      .page-hero-inner { padding: 50px 15px; flex-direction: column; gap: 30px; }
+      .hero-qr img { width: 120px; height: 120px; }
+      .disclaimer-section, .demos-section { padding-left: 15px; padding-right: 15px; }
+      .card-body { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="navbar" role="banner">
+    <div class="navbar-inner">
+      <a href="https://openmoq.org/" class="navbar-logo" aria-label="OpenMOQ home" target="_blank" rel="noopener noreferrer">
+        <img src="assets/openmoq-logo.svg" alt="OpenMOQ" width="139" height="28" />
+      </a>
+      <ul class="navbar-links" id="main-nav" role="list">
+        <li><a href="#" id="tools-tab">Tools</a></li>
+        <li><a href="#" id="demos-tab" class="active">Demos</a></li>
+      </ul>
+      <button class="menu-btn" aria-label="Open menu" aria-controls="main-nav"
+              onclick="document.getElementById('main-nav').classList.toggle('open')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero" id="hero-section" aria-labelledby="page-title">
+    <img src="assets/header-bg.jpg" alt="" class="page-hero-bg" aria-hidden="true" />
+    <div class="page-hero-inner">
+      <div class="hero-content">
+        <h1 class="hero-title" id="page-title">OpenMOQ Demos</h1>
+        <p class="hero-subtitle">
+          Explore early implementations of MOQ-based streaming technology built by the OpenMOQ community.
+        </p>
+      </div>
+      <div class="hero-qr" aria-hidden="true">
+        <img src="assets/qr-code.svg" alt="QR code" />
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" id="divider-hero" />
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer-section" id="disclaimer-section" role="note">
+    <div class="disclaimer-inner">
+      <div class="disclaimer-box">
+        <span class="disclaimer-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="hsl(37,75%,67%)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </span>
+        <div class="disclaimer-text">
+          <strong>Early Preview &mdash; Experimental Code</strong>
+          These demos are early previews of experimental software under active development. They may
+          not be operational at all times, are subject to change without notice, and are not intended
+          for production use. Availability, performance, and features may vary significantly.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEMOS GRID -->
+  <main class="demos-section" id="demos" style="display:block;">
+    <div class="demos-inner" id="demos-inner">
+      <!-- Generated by JavaScript -->
+    </div>
+  </main>
+
+  <!-- TOOLS GRID (hidden by default) -->
+  <main class="demos-section" id="tools" style="display:none;">
+    <div class="demos-inner" id="tools-inner">
+      <!-- Generated by JavaScript -->
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="https://openmoq.org/" class="footer-logo" aria-label="OpenMOQ home" target="_blank" rel="noopener noreferrer">
+        <img src="assets/openmoq-logo.svg" alt="OpenMOQ" width="120" height="24" />
+      </a>
+      <ul class="footer-links" role="list">
+        <li><a href="https://openmoq.org/#why" target="_blank" rel="noopener noreferrer">Why OpenMOQ</a></li>
+        <li><a href="https://openmoq.org/#technology" target="_blank" rel="noopener noreferrer">Technology</a></li>
+        <li><a href="https://openmoq.org/#members" target="_blank" rel="noopener noreferrer">Members</a></li>
+        <li><a href="https://openmoq.org/contact" target="_blank" rel="noopener noreferrer">Contact</a></li>
+        <li><a href="#">Demos</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2025 OpenMOQ Software Consortium &mdash; Early preview, experimental software.</p>
+    </div>
+  </footer>
+
+<script>
+const CARDS_DATA_URL = 'data/cards.json';
+const STATUS_DATA_URL = 'data/status.json';
+
+// Helper function to create status dot HTML
+function createStatusDot(status) {
+  if (status === 'live') {
+    return '<span class="status-dot live"></span>';
+  }
+  return '<span class="status-dot offline"></span>';
+}
+
+// Helper function to create arrow SVG
+function createArrowSvg() {
+  return '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 6 10" fill="currentColor"><path d="M3 9.5H0v-3h3v3Zm3-3H3v-3h3v3Zm-3-3H0v-3h3v3Z"/></svg>';
+}
+
+// Function to generate card HTML
+function createCardHTML(card) {
+  let thumbHTML;
+  if (card.icon) {
+    thumbHTML = `<div class="card-thumb-placeholder" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 4v16m8-8H4"/>
+      </svg>
+      ${card.title.split(' ')[0]} here
+    </div>`;
+  } else {
+    thumbHTML = `<img src="${card.image}" alt="${card.title} preview" style="${card.imageStyle}" />`;
+  }
+
+  const buttonClass = card.buttonType === 'secondary' ? 'btn btn-secondary' : 'btn btn-primary';
+  const statusDot = createStatusDot(card.status);
+  const arrowSvg = createArrowSvg();
+
+  return `
+    <article class="demo-card">
+      <div class="card-thumb">
+        <span class="card-tag">${card.tag}</span>
+        ${thumbHTML}
+      </div>
+      <div class="card-body">
+        <div class="card-title-row">
+          <span class="dot" aria-hidden="true"></span>
+          <h2 class="card-title">${card.title}</h2>
+        </div>
+        <p class="card-desc">${card.desc}</p>
+        <div class="card-footer">
+          <span class="card-status">${statusDot}${card.statusLabel}</span>
+          <a href="${card.link}" class="${buttonClass}" target="_blank" rel="noopener noreferrer">${card.buttonText}
+            <span class="arrow" aria-hidden="true">${arrowSvg}</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function getHealthStatus(card, statusMap) {
+  if (!card.id || !statusMap[card.id]) {
+    return {
+      status: 'offline',
+      statusLabel: 'Offline'
+    };
+  }
+
+  const health = statusMap[card.id];
+  return {
+    status: health.status || 'offline',
+    statusLabel: health.statusLabel || (health.httpCode === 200 ? 'Available' : 'Offline')
+  };
+}
+
+// Function to render cards into a container
+function renderCards(data, containerId, statusMap) {
+  const container = document.getElementById(containerId);
+  let html = '';
+
+  data.sections.forEach(section => {
+    html += `
+      <p class="section-label">
+        <span class="dot" aria-hidden="true"></span>
+        ${section.title}
+      </p>
+      <div class="demos-grid">
+    `;
+
+    section.cards.forEach(card => {
+      const healthStatus = getHealthStatus(card, statusMap);
+      html += createCardHTML({
+        ...card,
+        status: healthStatus.status,
+        statusLabel: healthStatus.statusLabel
+      });
+    });
+
+    html += '</div>';
+  });
+
+  container.innerHTML = html;
+}
+
+async function loadAndRenderCards() {
+  const cardsResponse = await fetch(CARDS_DATA_URL, { cache: 'no-store' });
+  if (!cardsResponse.ok) {
+    throw new Error('Unable to load card data');
+  }
+
+  const cardsData = await cardsResponse.json();
+  let statusData = { items: {} };
+
+  try {
+    const statusResponse = await fetch(STATUS_DATA_URL, { cache: 'no-store' });
+    if (statusResponse.ok) {
+      statusData = await statusResponse.json();
+    }
+  } catch (error) {
+    console.error('Unable to load status data', error);
+  }
+
+  const statusMap = statusData.items || {};
+  renderCards(cardsData.demos, 'demos-inner', statusMap);
+  renderCards(cardsData.tools, 'tools-inner', statusMap);
+}
+
+// Navbar tab toggling logic
+const demosTab = document.getElementById('demos-tab');
+const toolsTab = document.getElementById('tools-tab');
+const demosSection = document.getElementById('demos');
+const toolsSection = document.getElementById('tools');
+const heroSection = document.getElementById('hero-section');
+const disclaimerSection = document.getElementById('disclaimer-section');
+const dividerHero = document.getElementById('divider-hero');
+
+function showDemos() {
+  demosTab.classList.add('active');
+  toolsTab.classList.remove('active');
+  demosSection.style.display = 'block';
+  toolsSection.style.display = 'none';
+  if (heroSection) heroSection.style.display = '';
+  if (disclaimerSection) disclaimerSection.style.display = '';
+  if (dividerHero) dividerHero.style.display = '';
+}
+
+function showTools() {
+  demosTab.classList.remove('active');
+  toolsTab.classList.add('active');
+  demosSection.style.display = 'none';
+  toolsSection.style.display = 'block';
+  if (heroSection) heroSection.style.display = 'none';
+  if (disclaimerSection) disclaimerSection.style.display = 'none';
+  if (dividerHero) dividerHero.style.display = 'none';
+}
+
+demosTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  showDemos();
+});
+
+toolsTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  showTools();
+});
+
+const initialHost = window.location.hostname.toLowerCase();
+const initialPath = window.location.pathname.replace(/^\/+/, '').toLowerCase();
+
+if (initialHost.startsWith('tools.')) {
+  showTools();
+} else if (initialHost.startsWith('demos.')) {
+  showDemos();
+} else if (initialPath.startsWith('tools')) {
+  showTools();
+}
+
+loadAndRenderCards().catch(function(error) {
+  console.error(error);
+});
+</script>
+
+</body>
+</html>

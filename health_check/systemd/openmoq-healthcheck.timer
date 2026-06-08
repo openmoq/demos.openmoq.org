@@ -1,0 +1,10 @@
+[Unit]
+Description=Run OpenMOQ demos health check hourly
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+Unit=openmoq-healthcheck.service
+
+[Install]
+WantedBy=timers.target
