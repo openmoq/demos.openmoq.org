@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DATA_FILE="${SCRIPT_DIR}/../data/cards.json"
-STATUS_FILE="${SCRIPT_DIR}/../data/status.json"
+WEB_DIR="/var/www/html/player.openmoq.akaleapi.net/demos"
+DATA_FILE="${WEB_DIR}/data/cards.json"
+STATUS_FILE="${WEB_DIR}/data/status.json"
 
 if ! command -v curl >/dev/null 2>&1; then
   echo "curl is required" >&2

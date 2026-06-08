@@ -5,5 +5,5 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-WorkingDirectory=/srv/openmoq/demos
-ExecStart=/usr/bin/env bash /srv/openmoq/demos/health_check/check_status.sh
+WorkingDirectory=/opt/health_check
+ExecStart=/usr/bin/env bash /opt/health_check/check_status.sh
