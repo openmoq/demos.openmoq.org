@@ -20,7 +20,7 @@
             "title": "MOQtail player",
             "image": "assets/moqtail.08b0a8dc.svg",
             "imageStyle": "max-width:80%;max-height:80%;object-fit:contain;",
-            "desc": "Draft 14-compliant MOQ Transport (MOQT) protocol libraries for publisher, subscriber and relay components, featuring real-time, live and on-demand demo applications using the LOC and CMSF formats.",
+            "desc": "Draft 16-compliant MOQ Transport (MOQT) protocol libraries for publisher, subscriber and relay components, featuring real-time, live and on-demand demo applications using the LOC and CMSF formats.",
             "link": "https://player.moqtail.dev/",
             "buttonText": "Launch demo"
           },
