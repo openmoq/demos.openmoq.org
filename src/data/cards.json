@@ -30,7 +30,7 @@
             "title": "MOQ-Playa",
             "image": "assets/red5playa.jpg",
             "imageStyle": "max-width:80%;max-height:80%;object-fit:contain;",
-            "desc": "A MOQ browser player built on WebCodecs with low-latency A/V sync, adaptive jitter buffering, and ABR track switching. Supports LOC and CMSF packaging on draft-14 and draft-16 relays.",
+            "desc": "A MOQ browser player built on WebCodecs with low-latency A/V sync, adaptive jitter buffering, and ABR track switching. Supports LOC and CMSF packaging on draft-14, 16 and 18 relays.",
             "link": "https://playa.openmoq.akaleapi.net",
             "buttonText": "Launch demo"
           },
@@ -56,11 +56,7 @@
             "imageStyle": "max-width:60%;object-fit:contain;",
             "desc": "This project provides a minimal implementation of media player based on MOQT draft-14, media transport is based on draft-cenzano-moq-media-interop.",
             "link": "https://player.openmoq.akaleapi.net/moq-encoder-player/src-player/?host=https://us-lax-2.moqx.akaleapi.net/moq-relay&namespace=vc&trackPrefix=nelson",
-            "buttonText": "Launch demo",
-            "auth": {
-              "user": "demo",
-              "pass": "nab2026!"
-            }
+            "buttonText": "Launch demo"
           }
         ]
       },
@@ -83,7 +79,7 @@
             "title": "Eyevinn Player",
             "image": "assets/warp-player.jpg",
             "imageStyle": "max-width:60%;object-fit:contain;",
-            "desc": "A browser-based Media Player for MOQ protocol with WARP support. Supports draft-14, full WARP catalog support and multi DRM integration.",
+            "desc": "A browser-based Media Player for MOQ protocol with WARP support. Supports draft-18, full WARP catalog support and multi DRM integration.",
             "link": "https://moqlivemock.demo.osaas.io/warp-player/",
             "buttonText": "Launch demo"
           },
@@ -125,6 +121,16 @@
             "desc": "OpenMOQ test tools for protocol compliance, performance benchmarking, and interoperability testing of MOQ implementations.",
             "link": "https://moq-test.akaleapi.net/",
             "buttonText": "Open suite"
+          },
+          {
+            "id": "openmoq-benchmarks",
+            "tag": "Testing",
+            "title": "Protocol Benchmark",
+            "image": "assets/benchmarks.jpg",
+            "imageStyle": "max-width:60%;object-fit:contain;",
+            "desc": "Compare live ingest protocols, network paths, and software components to find your ideal live workflow.",
+            "link": "https://moq.sean-mccarthy.net/",
+            "buttonText": "Open tool"
           }
         ]
       }
