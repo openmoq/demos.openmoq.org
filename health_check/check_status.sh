@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-WEB_DIR="/var/www/html/player.openmoq.akaleapi.net/demos"
+WEB_DIR="/var/www/html/<WEBROOT>"
 DATA_FILE="${WEB_DIR}/data/cards.json"
 STATUS_FILE="${WEB_DIR}/data/status.json"
 

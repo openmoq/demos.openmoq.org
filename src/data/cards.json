@@ -49,6 +49,36 @@
             }
           },
           {
+            "id": "vindral-player",
+            "tag": "Live",
+            "title": "Vindral Composer",
+            "image": "assets/vindral.jpg",
+            "imageStyle": "max-width:60%;object-fit:contain;",
+            "desc": "Vindral Composer in the Akamai cloud: the production and delivery chain deployed on Akamai infrastructure, with MoQ from Vindral Composer through to delivery.",
+            "link": "https://demo.vindral.com/ibc2026-akamai/",
+            "buttonText": "Launch demo"
+          },
+          {
+            "id": "nanocosmos-demo",
+            "tag": "Live",
+            "title": "nanocosmos - MOQ Instant Test",
+            "image": "assets/nanocosmos.jpg",
+            "imageStyle": "max-width:60%;object-fit:contain;",
+            "desc": "Try MOQ right in your browser. No sign-up required. nanocosmos was one of the first platforms to run MOQ at production scale for real-time streaming, and this Instant Test lets you experience it yourself.",
+            "link": "https://instant-test.nanocosmos.net/instanttest.html?utm_source=openmoq&utm_medium=referral&utm_campaign=c1-moq",
+            "buttonText": "Launch demo"
+          },
+          {
+            "id": "bitmovin-player-web-x",
+            "tag": "Live",
+            "title": "Bitmovin Player Web X",
+            "image": "assets/bitmovin-playerx.jpg",
+            "imageStyle": "width:100%;height:100%;object-fit:cover;",
+            "desc": "Bitmovin's Player Web X playing live MOQ streams from several public relays, with a source picker, selectable target latency and rendition switching. Runs against draft-14, draft-16 and draft-18 relays; transport and packaging via moq-playa.",
+            "link": "https://demo.bitmovin.com/public/pwx/moq-ibc/",
+            "buttonText": "Launch demo"
+          },
+          {
             "id": "meta-player",
             "tag": "Live",
             "title": "Meta Player",
@@ -91,16 +121,6 @@
             "imageStyle": "max-width:60%;object-fit:contain;",
             "desc": "Shaka player demo showcasing links to multiple MOQ test streams with different formats and features including DRM, 4K and HDR content.",
             "link": "https://shaka-project.github.io/shaka-player/demo/#panel=ALL_CONTENT;panelData=MSF",
-            "buttonText": "Launch demo"
-          },
-          {
-            "id": "bitmovin-player-web-x",
-            "tag": "Live",
-            "title": "Bitmovin Player Web X",
-            "image": "assets/bitmovin-playerx.jpg",
-            "imageStyle": "width:100%;height:100%;object-fit:cover;",
-            "desc": "Bitmovin's Player Web X playing live MOQ streams from several public relays, with a source picker, selectable target latency and rendition switching. Runs against draft-14, draft-16 and draft-18 relays; transport and packaging via moq-playa.",
-            "link": "https://demo.bitmovin.com/public/pwx/moq-ibc/",
             "buttonText": "Launch demo"
           }
         ]
