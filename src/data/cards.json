@@ -59,6 +59,16 @@
             "buttonText": "Launch demo"
           },
           {
+            "id": "nanocosmos-demo",
+            "tag": "Live",
+            "title": "nanocosmos - MOQ Instant Test",
+            "image": "assets/nanocosmos.jpg",
+            "imageStyle": "max-width:60%;object-fit:contain;",
+            "desc": "Try MOQ right in your browser. No sign-up required. nanocosmos was one of the first platforms to run MOQ at production scale for real-time streaming, and this Instant Test lets you experience it yourself.",
+            "link": "https://instant-test.nanocosmos.net/instanttest.html?utm_source=openmoq&utm_medium=referral&utm_campaign=c1-moq",
+            "buttonText": "Launch demo"
+          },
+          {
             "id": "meta-player",
             "tag": "Live",
             "title": "Meta Player",
