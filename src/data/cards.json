@@ -49,6 +49,16 @@
             }
           },
           {
+            "id": "vindral-player",
+            "tag": "Live",
+            "title": "Vindral Composer",
+            "image": "assets/vindral.jpg",
+            "imageStyle": "max-width:60%;object-fit:contain;",
+            "desc": "Vindral Composer in the Akamai cloud: the production and delivery chain deployed on Akamai infrastructure, with MoQ from Vindral Composer through to delivery.",
+            "link": "https://demo.vindral.com/ibc2026-akamai/",
+            "buttonText": "Launch demo"
+          },
+          {
             "id": "meta-player",
             "tag": "Live",
             "title": "Meta Player",
