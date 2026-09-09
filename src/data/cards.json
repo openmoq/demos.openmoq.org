@@ -69,6 +69,16 @@
             "buttonText": "Launch demo"
           },
           {
+            "id": "bitmovin-player-web-x",
+            "tag": "Live",
+            "title": "Bitmovin Player Web X",
+            "image": "assets/bitmovin-playerx.jpg",
+            "imageStyle": "width:100%;height:100%;object-fit:cover;",
+            "desc": "Bitmovin's Player Web X playing live MOQ streams from several public relays, with a source picker, selectable target latency and rendition switching. Runs against draft-14, draft-16 and draft-18 relays; transport and packaging via moq-playa.",
+            "link": "https://demo.bitmovin.com/public/pwx/moq-ibc/",
+            "buttonText": "Launch demo"
+          },
+          {
             "id": "meta-player",
             "tag": "Live",
             "title": "Meta Player",
@@ -111,16 +121,6 @@
             "imageStyle": "max-width:60%;object-fit:contain;",
             "desc": "Shaka player demo showcasing links to multiple MOQ test streams with different formats and features including DRM, 4K and HDR content.",
             "link": "https://shaka-project.github.io/shaka-player/demo/#panel=ALL_CONTENT;panelData=MSF",
-            "buttonText": "Launch demo"
-          },
-          {
-            "id": "bitmovin-player-web-x",
-            "tag": "Live",
-            "title": "Bitmovin Player Web X",
-            "image": "assets/bitmovin-playerx.jpg",
-            "imageStyle": "width:100%;height:100%;object-fit:cover;",
-            "desc": "Bitmovin's Player Web X playing live MOQ streams from several public relays, with a source picker, selectable target latency and rendition switching. Runs against draft-14, draft-16 and draft-18 relays; transport and packaging via moq-playa.",
-            "link": "https://demo.bitmovin.com/public/pwx/moq-ibc/",
             "buttonText": "Launch demo"
           }
         ]
