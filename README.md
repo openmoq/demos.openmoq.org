@@ -58,6 +58,8 @@ Runtime health status is generated into [data/status.json](data/status.json) by 
 2. Install units:
 
 ```bash
+sudo mkdir -p /opt/health_check
+sudo cp health_check/check_status.sh /opt/health_check
 sudo cp health_check/systemd/openmoq-healthcheck.service /etc/systemd/system/
 sudo cp health_check/systemd/openmoq-healthcheck.timer /etc/systemd/system/
 sudo systemctl daemon-reload
