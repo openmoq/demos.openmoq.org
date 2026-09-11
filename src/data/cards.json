@@ -151,6 +151,16 @@
             "desc": "Compare live ingest protocols, network paths, and software components to find your ideal live workflow.",
             "link": "https://moq.sean-mccarthy.net/",
             "buttonText": "Open tool"
+          },
+          {
+            "id": "catalog-viewer",
+            "tag": "Tool",
+            "title": "Catalog Viewer",
+            "image": "assets/catalog_viewer.jpg",
+            "imageStyle": "max-width:60%;object-fit:contain;",
+            "desc": "View and explore the catalog of available media assets, including metadata and preview options.",
+            "link": "https://player.openmoq.akaleapi.net/tools/playa/catalog/?url=https%3A%2F%2Fsource.moq.akaleapi.net%2Fmoq&ns=msf%252fclear&v=18",
+            "buttonText": "Launch tool"
           }
         ]
       }
