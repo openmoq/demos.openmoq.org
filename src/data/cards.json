@@ -94,7 +94,7 @@
             "title": "Ms. MoqMan",
             "image": "assets/msmoqman.jpg",
             "imageStyle": "max-width:100%;object-fit:contain;",
-            "desc": "One player, four ghosts, all via MOQT relay. Ready player one!",
+            "desc": "One player, four ghosts, and a MOQT relay in the loop. Ready player one!",
             "link": "https://playa.openmoq.akaleapi.net/msmoqman/",
             "buttonText": "Play game"
           }
