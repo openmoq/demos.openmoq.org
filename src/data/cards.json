@@ -161,16 +161,6 @@
             "desc": "Interactive tool for experimenting with basics of the MOQT protocol.",
             "link": "https://player.openmoq.akaleapi.net/tools/playground/?url=https://us-ord-2.moqx.akaleapi.net/moq-relay&ns=playground&track=my-first-track",
             "buttonText": "Launch tool"
-          },
-          {
-            "id": "openmoq-benchmarks",
-            "tag": "Testing",
-            "title": "Protocol Benchmark",
-            "image": "assets/benchmarks.jpg",
-            "imageStyle": "max-width:60%;object-fit:contain;",
-            "desc": "Compare live ingest protocols, network paths, and software components to find your ideal live workflow.",
-            "link": "https://moq.sean-mccarthy.net/",
-            "buttonText": "Open tool"
           }
         ]
       }
