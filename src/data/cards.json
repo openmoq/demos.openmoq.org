@@ -79,14 +79,14 @@
             "buttonText": "Launch demo"
           },
           {
-            "id": "meta-player",
-            "tag": "Live",
-            "title": "Meta Player",
-            "image": "assets/moqencoderplayer.jpg",
-            "imageStyle": "max-width:60%;object-fit:contain;",
-            "desc": "This project provides a minimal implementation of media player based on MOQT draft-14, media transport is based on draft-cenzano-moq-media-interop.",
-            "link": "https://player.openmoq.akaleapi.net/moq-encoder-player/src-player/?host=https://us-lax-2.moqx.akaleapi.net/moq-relay&namespace=vc&trackPrefix=nelson",
-            "buttonText": "Launch demo"
+            "id": "msmoqman-game",
+            "tag": "Interactive",
+            "title": "Ms. MoqMan",
+            "image": "assets/msmoqman.jpg",
+            "imageStyle": "max-width:100%;object-fit:contain;",
+            "desc": "One player, four ghosts, and a MOQT relay in the loop. Ready player one!",
+            "link": "https://playa.openmoq.akaleapi.net/msmoqman/",
+            "buttonText": "Play game"
           }
         ]
       },
@@ -143,16 +143,6 @@
             "buttonText": "Open suite"
           },
           {
-            "id": "openmoq-benchmarks",
-            "tag": "Testing",
-            "title": "Protocol Benchmark",
-            "image": "assets/benchmarks.jpg",
-            "imageStyle": "max-width:60%;object-fit:contain;",
-            "desc": "Compare live ingest protocols, network paths, and software components to find your ideal live workflow.",
-            "link": "https://moq.sean-mccarthy.net/",
-            "buttonText": "Open tool"
-          },
-          {
             "id": "catalog-viewer",
             "tag": "Tool",
             "title": "Catalog Viewer",
@@ -160,6 +150,16 @@
             "imageStyle": "max-width:60%;object-fit:contain;",
             "desc": "View and explore the catalog of available media assets, including metadata and preview options.",
             "link": "https://player.openmoq.akaleapi.net/tools/playa/catalog/?url=https%3A%2F%2Fsource.moq.akaleapi.net%2Fmoq&ns=msf%252fclear&v=18",
+            "buttonText": "Launch tool"
+          },
+          {
+            "id": "playground",
+            "tag": "Tool",
+            "title": "MOQT Playground",
+            "image": "assets/playground.jpg",
+            "imageStyle": "max-width:60%;object-fit:contain;",
+            "desc": "Interactive tool for experimenting with basics of the MOQT protocol.",
+            "link": "https://player.openmoq.akaleapi.net/tools/playground/?url=https://us-ord-2.moqx.akaleapi.net/moq-relay&ns=playground&track=my-first-track",
             "buttonText": "Launch tool"
           }
         ]
