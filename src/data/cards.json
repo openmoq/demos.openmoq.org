@@ -149,7 +149,7 @@
             "image": "assets/catalog_viewer.jpg",
             "imageStyle": "max-width:60%;object-fit:contain;",
             "desc": "View and explore the catalog of available media assets, including metadata and preview options.",
-            "link": "https://player.openmoq.akaleapi.net/tools/playa/catalog/?url=https%3A%2F%2Fsource.moq.akaleapi.net%2Fmoq&ns=msf%252fclear&v=18",
+            "link": "https://player.openmoq.akaleapi.net/tools/playa/catalog/?url=https%3A%2F%2Fsource.moq.akaleapi.net%2Fmoq&ns=mlm%2Fmsf%2Fclear&v=18",
             "buttonText": "Launch tool"
           },
           {
