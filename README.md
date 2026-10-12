@@ -1,5 +1,5 @@
 # demos
-This repo maintains the data used to provide the site: [demos.openmoq.org](demos.openmoq.org)
+This repo maintains the data used to provide the site: [demos.openmoq.org](https://demos.openmoq.org)
 
 ## Adding/modifying a demo
 
